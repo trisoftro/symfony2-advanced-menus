@@ -1,0 +1,71 @@
+mc_test:
+    resource: "@MCTestBundle/Controller/"
+    type:     annotation
+    prefix:   /test
+
+mc_core:
+    resource: "@MCCoreBundle/Controller/"
+    prefix:   /
+
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_profile_show:
+    pattern: /profile
+    defaults:
+        _controller: FOSUserBundle:Profile:show
+    methods: [GET]
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+    requirements:
+        _scheme: https
+
+fos_user_registration_register:
+    pattern: /register
+    options:
+        expose: true
+    defaults:
+        _controller: FOSUserBundle:Registration:register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /password
+
+fos_user_resetting_request:
+    pattern: /password/forgot
+    defaults: { _controller: FOSUserBundle:Resetting:request }
+
+fos_user_resetting_send_email:
+    pattern: /password/sent-email
+    defaults: { _controller: FOSUserBundle:Resetting:sendEmail }
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+    requirements:
+        _scheme: https
+
+fos_user_security_login:
+    pattern: /login
+    defaults: { _controller: FOSUserBundle:Security:login }
+    requirements:
+        _scheme: https
+
+fos_user_security_check:
+    pattern: /login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+    requirements:
+        _scheme: https
+
+_security_check:
+    pattern:  /login
+
+_security_logout:
+    pattern:  /logout

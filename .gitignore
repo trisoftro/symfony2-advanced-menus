@@ -1,0 +1,15 @@
+.DS_Store
+app/config/parameters.yml
+app/cache/*
+app/logs/*
+web/bundles/*
+web/css/*
+web/js/*
+vendor/*
+.idea
+/composer.phar
+/app/bootstrap.php.cache
+*.php~
+*.yml~
+*~
+Vagrantfile

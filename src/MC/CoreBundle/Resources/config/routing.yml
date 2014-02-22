@@ -1,0 +1,17 @@
+#mc_core:
+#    resource: "@MCCoreBundle/Controller/"
+#    type:     annotation
+#    prefix:   /account
+
+home:
+    path:     /
+    defaults: { _controller: MCCoreBundle:Default:index }
+test:
+    path:     /test
+    defaults: { _controller: MCCoreBundle:Default:test }
+test1:
+    path:     /test1
+    defaults: { _controller: MCCoreBundle:Default:test1 }
+test2:
+    path:     /test2
+    defaults: { _controller: MCCoreBundle:Default:test2 }

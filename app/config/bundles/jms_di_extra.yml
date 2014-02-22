@@ -1,0 +1,5 @@
+jms_di_extra:
+    locations:
+        all_bundles: false
+        bundles: [MCCoreBundle, MCTestBundle]
+        directories: ["%kernel.root_dir%/../src"]
